@@ -83,3 +83,8 @@ p {
   margin: 0;
   font-size: 38px;
 }
+
+.signature {
+  text-align: center;
+  font-size: 15px;
+}
