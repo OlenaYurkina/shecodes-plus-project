@@ -13,7 +13,7 @@ function formatDate(date) {
   function padTo2Digits(num) {
     return String(num).padStart(2, "0");
   }
-  const hoursAndMinutes =
+  let hoursAndMinutes =
     padTo2Digits(date.getHours()) + ":" + padTo2Digits(date.getMinutes());
   let currentDay = days[date.getDay()];
 
