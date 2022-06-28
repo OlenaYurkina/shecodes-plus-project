@@ -6,6 +6,7 @@
   border: solid 1px;
   font-family: Arial, Helvetica, sans-serif;
   color: gray;
+  margin-top: 20px;
 }
 .header {
   padding: 0 0 10px 0;
@@ -25,7 +26,18 @@
   text-align: center;
   padding: 0;
 }
-button {
+.row {
+  margin: 0;
+}
+.col.col-3 {
+  padding: 0;
+}
+
+#search-form {
+  padding: 0, 10, 0, 0;
+}
+
+#current-button {
   color: grey;
   font-size: 18px;
   line-height: 22px;
@@ -36,6 +48,8 @@ button {
   margin: 0 auto;
   display: block;
   font-weight: bold;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 #search-button {
@@ -48,6 +62,16 @@ button {
   height: 30px;
   padding: 0;
   font-weight: bold;
+  margin-left: 1px;
+}
+
+#search-city {
+  padding-left: 0;
+}
+
+#city-input {
+  padding: 0;
+  height: 28px;
 }
 
 .main {

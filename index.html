@@ -26,11 +26,11 @@
 
       <div class="form">
         <div class="row">
-          <div class="col-3">
+          <div class="col-3 current">
             <button id="current-button">Current</button>
           </div>
 
-          <div class="col">
+          <div class="col" id="search-form">
             <form id="search-city">
               <input
                 type="search"
@@ -55,7 +55,7 @@
         <div class="row">
           <div class="col humidity">
             Humidity <br />
-            78%
+            <span id="main-humidity">78</span>%
           </div>
 
           <div class="col" id="central">
@@ -106,7 +106,9 @@
       </div>
     </div>
     <p class="signature">
-      <a href="https://github.com/OlenaYurkina/shecodes-plus-project"
+      <a
+        href="https://github.com/OlenaYurkina/shecodes-plus-project"
+        target="_blank"
         >Open-source code</a
       >
       by Olena Yurkina
