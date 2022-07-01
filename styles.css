@@ -32,11 +32,10 @@
 .col.col-3 {
   padding: 0;
 }
-
-#search-form {
-  padding: 0, 10, 0, 0;
+input[type="search"] {
+  font-size: 20px;
+  text-align: center;
 }
-
 #current-button {
   color: grey;
   font-size: 18px;
@@ -82,7 +81,7 @@
 
 .col.humidity {
   position: relative;
-  top: 23px;
+  top: 40px;
 }
 
 #central {
@@ -96,7 +95,7 @@
 }
 .col.wind {
   position: relative;
-  top: 23px;
+  top: 40px;
 }
 
 .days {
