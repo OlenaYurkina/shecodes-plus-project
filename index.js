@@ -61,12 +61,13 @@ function getApiWeather(city) {
   let apiKey = "589d4e7caa7d5afe2a7829afb0f2fcbf";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(showTemperature);
   console.log(apiUrl);
+  axios.get(apiUrl).then(showTemperature);
 }
+
 function showTemperature(response) {
   let temp = Math.round(response.data.main.temp);
+  celsiusTemp = response.data.main.temp;
   let showTemp = document.querySelector("#main-temperature");
   showTemp.innerHTML = `${temp}`;
   let wind = Math.round(response.data.wind.speed);
@@ -77,6 +78,11 @@ function showTemperature(response) {
   console.log(humidity);
   let showHumidity = document.querySelector("#main-humidity");
   showHumidity.innerHTML = `${humidity}`;
+  let iconMainElement = document.querySelector("#icon-main");
+  iconMainElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function searchCity(event) {
@@ -120,3 +126,30 @@ function getCurrentPosition() {
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentPosition);
+
+function showFarenheitTemp(event) {
+  event.preventDefault();
+  let farenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  let tempElement = document.querySelector("#main-temperature");
+  tempElement.innerHTML = Math.round(farenheitTemp);
+  celsiusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
+}
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#main-temperature");
+  tempElement.innerHTML = Math.round(celsiusTemp);
+  celsiusLink.classList.add("active");
+  farenheitLink.classList.remove("active");
+}
+
+let farenheitLink = document.querySelector("#farenheit-temp");
+farenheitLink.addEventListener("click", showFarenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-temp");
+celsiusLink.addEventListener("click", showCelsiusTemp);
+
+let celsiusTemp = null;
+
+getApiWeather("Lisbon");
