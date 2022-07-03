@@ -1,7 +1,7 @@
 .container {
   width: 550px;
   border: 10px;
-  padding: 50px 0;
+  padding: 50px 0 10px 0;
   display: block;
   border: solid 1px;
   font-family: Arial, Helvetica, sans-serif;
@@ -36,6 +36,7 @@
 input[type="search"] {
   font-size: 20px;
   text-align: center;
+  box-shadow: 3px 3px rgb(235, 222, 222);
 }
 #current-button {
   color: grey;
@@ -50,6 +51,7 @@ input[type="search"] {
   font-weight: bold;
   padding-left: 0;
   padding-right: 0;
+  box-shadow: 3px 3px rgb(235, 222, 222);
 }
 
 #search-button {
@@ -63,6 +65,9 @@ input[type="search"] {
   padding: 0;
   font-weight: bold;
   margin-left: 1px;
+  position: relative;
+  right: -20px;
+  box-shadow: 3px 3px rgb(235, 222, 222);
 }
 
 #search-city {
@@ -80,26 +85,34 @@ input[type="search"] {
   font-size: 20px;
 }
 
-.col.humidity {
+#main-city {
+  text-transform: capitalize;
+}
+#main-temperature {
+  text-align: left;
+}
+.col-3.humidity {
   position: relative;
-  top: 40px;
+  top: 25px;
+  font-size: medium;
 }
 
 #central {
   font-size: 34px;
 }
 #celsius-temp {
-  font-size: 20px;
+  font-size: 17px;
 }
 #farenheit-temp {
-  font-size: 20px;
+  font-size: 17px;
 }
-.col.wind {
+.col-3.wind {
   position: relative;
-  top: 40px;
+  top: 25px;
+  font-size: medium;
 }
 img {
-  height: 80px;
+  height: 55px;
 }
 .active {
   color: grey;
@@ -123,4 +136,5 @@ p {
 #signature {
   text-align: center;
   font-size: 15px;
+  padding: 20px;
 }

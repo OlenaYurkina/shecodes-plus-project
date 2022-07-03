@@ -54,24 +54,25 @@
 
       <div class="main">
         <div class="row">
-          <div class="col humidity">
-            Humidity <br />
+          <div class="col-3 humidity">
+           <strong> Humidity </strong><br />
             <span id="main-humidity">78</span>%
           </div>
 
-          <div class="col" id="central">
+          <div class="col-6" id="central">
             <span id="main-city">Lisbon</span> <br />
+            <span><img src="" alt="" id="icon-main" /></span>
             <span id="main-temperature">20</span>
             <sup
               ><span>
                 <a href="#" id="celsius-temp" class="active">°C/</a> </span
               ><span> <a href="#" id="farenheit-temp">°F</a> </span>
             </sup>
-            <span><img src="" alt="" id="icon-main" /></span>
+            
           </div>
 
-          <div class="col wind">
-            Wind <br />
+          <div class="col-3 wind">
+           <strong> Wind </strong> <br />
             <span id="main-wind">5</span> km/hour
           </div>
         </div>
@@ -107,6 +108,7 @@
         </div>
       </div>
     </div>
+    <script src="index.js"></script>
     <footer id="signature">
       <a
         href="https://github.com/OlenaYurkina/shecodes-plus-project"
@@ -115,6 +117,5 @@
       >
       by Olena Yurkina
     </footer>
-    <script src="index.js"></script>
   </body>
 </html>
