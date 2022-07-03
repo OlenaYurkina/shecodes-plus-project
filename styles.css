@@ -93,7 +93,7 @@ input[type="search"] {
 }
 .col-3.humidity {
   position: relative;
-  top: 25px;
+  top: 30px;
   font-size: medium;
 }
 
@@ -106,9 +106,10 @@ input[type="search"] {
 #farenheit-temp {
   font-size: 17px;
 }
+
 .col-3.wind {
   position: relative;
-  top: 25px;
+  top: 30px;
   font-size: medium;
 }
 img {

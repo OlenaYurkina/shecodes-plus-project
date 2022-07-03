@@ -71,13 +71,15 @@ function showTemperature(response) {
   let showTemp = document.querySelector("#main-temperature");
   showTemp.innerHTML = `${temp}`;
   let wind = Math.round(response.data.wind.speed);
-  console.log(wind);
   let showWind = document.querySelector("#main-wind");
   showWind.innerHTML = `${wind}`;
   let humidity = Math.round(response.data.main.humidity);
-  console.log(humidity);
   let showHumidity = document.querySelector("#main-humidity");
   showHumidity.innerHTML = `${humidity}`;
+  let description = response.data.weather[0].description;
+  let showDescription = document.querySelector("#main-description");
+  showDescription.innerHTML = `${description}`;
+
   let iconMainElement = document.querySelector("#icon-main");
   iconMainElement.setAttribute(
     "src",
@@ -110,6 +112,18 @@ function showCurrentTemperature(response) {
   let currentWind = Math.round(response.data.wind.speed);
   let targetWind = document.querySelector("#main-wind");
   targetWind.innerHTML = `${currentWind}`;
+  let currentHumidity = Math.round(response.data.main.humidity);
+  let targetHumidity = document.querySelector("#main-humidity");
+  targetHumidity.innerHTML = `${currentHumidity}`;
+  let currentDescription = response.data.weather[0].description;
+  console.log(currentDescription);
+  let targetDescription = document.querySelector("#main-description");
+  targetDescription.innerHTML = `${currentDescription}`;
+  let iconMainElement = document.querySelector("#icon-main");
+  iconMainElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function handlePosition(position) {
