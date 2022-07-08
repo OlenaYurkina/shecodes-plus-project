@@ -56,6 +56,24 @@ let currentCalendar = document.querySelector("#date-left");
 currentCalendar.innerHTML = formatCalendar(new Date());
 
 //Display a fake temperature (i.e 17) in Celsius and add a link to convert it to Fahrenheit. When clicking on it, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius.
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+               <div class="weather-day">${day}</div>
+               <div class="weather-day-icon">☀️</div>
+               <div class="weather-day-temp"> 22°C</div>
+            </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function getApiWeather(city) {
   let apiKey = "589d4e7caa7d5afe2a7829afb0f2fcbf";
@@ -165,5 +183,7 @@ let celsiusLink = document.querySelector("#celsius-temp");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
 let celsiusTemp = null;
+
+displayForecast();
 
 getApiWeather("Lisbon");
